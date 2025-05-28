@@ -1,29 +1,17 @@
-import tkinter as tk
-import Jetson.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
+GPIO.setmode(GPIO.BCM)
 
-root = tk.Tk()
+#define your specific motor pwm pins here
+motor1pin = 9
+motor2pin = 2
+motor3pin = 3
+motor4pin = 4
+motor5pin = 5
+motor6pin = 6
+motor7pin = 7
+motor8pin = 8
 
-#set window attributes
-root.geometry("500x500")
-root.title("AVA")
+GPIO.setup(motor1pin, GPIO.OUT)
 
-label = tk.Label(root, text="Hello", font=('Arial',18))
-label.pack(padx=20,pady=20)
-
-#opens a window
-root.mainloop()
-
-GPIO.setmode(GPIO.BOARD)         # use physical pin numbers
-LED = 12                         # J41 pin 12 (BCM 18)
-
-GPIO.setup(LED, GPIO.OUT, initial=GPIO.LOW)
-
-try:
-    while True:
-        GPIO.output(LED, GPIO.HIGH)
-        time.sleep(0.5)
-        GPIO.output(LED, GPIO.LOW)
-        time.sleep(0.5)
-finally:
-    GPIO.cleanup()               # always reset pins on exit
+GPIO.PWM(motor1pin, 50)
