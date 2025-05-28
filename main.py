@@ -13,5 +13,5 @@ motor7pin = 7
 motor8pin = 8
 
 GPIO.setup(motor1pin, GPIO.OUT)
-
+#done
 GPIO.PWM(motor1pin, 50)
