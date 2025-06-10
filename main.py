@@ -27,9 +27,9 @@ motor_driver_3_enb = 26
 motor_driver_4_ena = 36
 motor_driver_4_int_1 = 38
 motor_driver_4_int_2 = 40
-motor_driver_4_int_3 = 29
-motor_driver_4_int_4 = 31
-motor_driver_4_enb = 32
+motor_driver_4_int_3 = 22
+motor_driver_4_int_4 = 24
+motor_driver_4_enb = 26
 
 pin_to_gpio = {
     3: 2,
