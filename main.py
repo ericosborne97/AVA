@@ -174,9 +174,9 @@ tire_3_rotation_enable_pwm.stop()
 
 
 while True:
-    tire_3_rotation_enable_pwm.start(speed)
-    GPIO.output(tire_3_rotation_direction_1, GPIO.LOW)
-    GPIO.output(tire_3_rotation_direction_2, GPIO.HIGH)
+    tire_3_steering_enable_pwm.start(speed)
+    GPIO.output(tire_3_steering_direction_1, GPIO.LOW)
+    GPIO.output(tire_3_steering_direction_2, GPIO.HIGH)
 
 GPIO.cleanup()
 
