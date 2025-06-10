@@ -114,9 +114,9 @@ tire_3_rotation_direction_1 = motor_driver_3_int_3
 tire_3_rotation_direction_2 = motor_driver_3_int_4
 
 #!!!!!!! something wrong with these
-tire_3_steering_enable = motor_driver_3_ena
-tire_3_steering_direction_1 = motor_driver_3_int_1
-tire_3_steering_direction_2 = motor_driver_3_int_2
+#tire_3_steering_enable = motor_driver_3_ena
+#tire_3_steering_direction_1 = motor_driver_3_int_1
+#tire_3_steering_direction_2 = motor_driver_3_int_2
 
 #Set mode and all pins to output
 GPIO.setmode(GPIO.BCM)
