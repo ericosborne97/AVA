@@ -126,7 +126,7 @@ GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 
 #Configure all motors to run at 100 pwm
 
-speed = 10
+speed = 5
 
 motor_driver_1_ena_pwm = GPIO.PWM(motor_driver_1_ena, speed)
 motor_driver_1_enb_pwm = GPIO.PWM(motor_driver_1_enb, speed)
