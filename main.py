@@ -92,6 +92,10 @@ motor_driver_4_int_3 = board_pin_to_gpio(motor_driver_4_int_3)
 motor_driver_4_int_4 = board_pin_to_gpio(motor_driver_4_int_4)
 motor_driver_4_enb = board_pin_to_gpio(motor_driver_4_enb)
 
+#define what motor driver links with hardware
+tire_1_rotation_enable = motor_driver_1_enb
+tire_1_rotation_direction_1 = motor_driver_1_int_3
+tire_1_rotation_direction_2 = motor_driver_1_int_4
 
 #Set mode and all pins to output
 GPIO.setmode(GPIO.BCM)
@@ -128,30 +132,10 @@ GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 
 speed = 5
 
-motor_driver_1_ena_pwm = GPIO.PWM(motor_driver_1_ena, speed)
-motor_driver_1_enb_pwm = GPIO.PWM(motor_driver_1_enb, speed)
-motor_driver_2_ena_pwm = GPIO.PWM(motor_driver_2_ena, speed)
-motor_driver_2_enb_pwm = GPIO.PWM(motor_driver_2_enb, speed)
-motor_driver_3_ena_pwm = GPIO.PWM(motor_driver_3_ena, speed)
-motor_driver_3_enb_pwm = GPIO.PWM(motor_driver_3_enb, speed)
-motor_driver_4_ena_pwm = GPIO.PWM(motor_driver_4_ena, speed)
-motor_driver_4_enb_pwm = GPIO.PWM(motor_driver_4_enb, speed)
+tire_1_rotation_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
 
 while True:
-    motor_driver_1_ena_pwm.start(speed)
-    motor_driver_1_enb_pwm.start(speed)
-    motor_driver_2_ena_pwm.start(speed)
-    motor_driver_2_enb_pwm.start(speed)
-    motor_driver_3_ena_pwm.start(speed)
-    motor_driver_3_enb_pwm.start(speed)
-    motor_driver_4_ena_pwm.start(speed)
-    motor_driver_4_enb_pwm.start(speed)
+    tire_1_rotation_pwm.start(speed)
+    GPIO.output(tire_1_rotation_direction_1, GPIO.HIGH)
 
-    GPIO.output(motor_driver_1_int_1, GPIO.HIGH)
-    GPIO.output(motor_driver_1_int_3, GPIO.HIGH)
-    GPIO.output(motor_driver_2_int_1, GPIO.HIGH)
-    GPIO.output(motor_driver_2_int_3, GPIO.HIGH)
-    GPIO.output(motor_driver_3_int_1, GPIO.HIGH)
-    GPIO.output(motor_driver_3_int_3, GPIO.HIGH)
-    GPIO.output(motor_driver_4_int_1, GPIO.HIGH)
-    GPIO.output(motor_driver_4_int_3, GPIO.HIGH)
+
