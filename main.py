@@ -2,7 +2,6 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 
-GPIO.cleanup()
 #define your specific motor pwm pins here
 motor_driver_1_ena = 3
 motor_driver_1_int_1 = 5
@@ -155,7 +154,7 @@ tire_2_steering_enable_pwm = GPIO.PWM(tire_2_steering_enable, speed)
 tire_2_rotation_enable_pwm = GPIO.PWM(tire_2_rotation_enable, speed)
 
 while True:
-    tire_2_steering_enable_pwm.start(speed)
+    #tire_2_steering_enable_pwm.start(speed)
     GPIO.output(tire_2_steering_direction_1, GPIO.LOW)
     GPIO.output(tire_2_steering_direction_2, GPIO.HIGH)
 
