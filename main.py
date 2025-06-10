@@ -129,6 +129,8 @@ GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 speed = 100
 
 while True:
+    print(motor_driver_1_ena)
+    print(motor_driver_1_enb)
     motor_driver_1_ena_pwm = GPIO.PWM(motor_driver_1_ena, speed)
     motor_driver_1_ena_pwm.start(speed)
     motor_driver_1_enb_pwm = GPIO.PWM(motor_driver_1_enb, speed)
