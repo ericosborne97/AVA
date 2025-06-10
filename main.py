@@ -136,7 +136,7 @@ GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 
 #Configure all motors to run at 100 pwm
 
-speed = 0
+speed = 0.01
 
 tire_1_steering_enable_pwm = GPIO.PWM(tire_1_steering_enable, speed)
 tire_1_rotation_enable_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
