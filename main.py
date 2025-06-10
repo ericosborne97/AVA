@@ -154,6 +154,8 @@ print("tire_1_steering_enable", tire_1_steering_enable)
 print("tire_1_rotation_enable", tire_1_rotation_enable)
 print("tire_2_steering_enable", tire_2_steering_enable)
 print("tire_2_rotation_enable", tire_2_rotation_enable)
+print("tire_3_steering_enable", tire_3_steering_enable)
+print("tire_3_rotation_enable", tire_3_rotation_enable)
 
 tire_1_steering_enable_pwm = GPIO.PWM(tire_1_steering_enable, speed)
 tire_1_rotation_enable_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
