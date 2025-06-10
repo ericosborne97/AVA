@@ -20,9 +20,9 @@ motor_driver_2_enb = 33
 motor_driver_3_ena = 8
 motor_driver_3_int_1 = 10
 motor_driver_3_int_2 = 12
-motor_driver_3_int_3 = 22
-motor_driver_3_int_4 = 24
-motor_driver_3_enb = 26
+motor_driver_3_int_3 = 16
+motor_driver_3_int_4 = 18
+motor_driver_3_enb = 32
 
 motor_driver_4_ena = 36
 motor_driver_4_int_1 = 38
