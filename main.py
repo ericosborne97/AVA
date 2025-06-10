@@ -136,6 +136,7 @@ tire_1_rotation_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
 
 while True:
     tire_1_rotation_pwm.start(speed)
-    GPIO.output(tire_1_rotation_direction_1, GPIO.HIGH)
+    GPIO.output(tire_1_rotation_direction_1, GPIO.LOW)
+    GPIO.output(tire_1_rotation_direction_2, GPIO.HIGH)
 
 
