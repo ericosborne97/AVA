@@ -128,15 +128,11 @@ GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 
 speed = 100
 
-motor_driver_1_ena_pwm = GPIO.PWM(motor_driver_1_ena, speed)
-motor_driver_1_ena_pwm.start(0)
-GPIO.output(motor_driver_1_int_1, GPIO.HIGH)
-GPIO.output(motor_driver_1_int_3, GPIO.HIGH)
 while True:
     motor_driver_1_ena_pwm = GPIO.PWM(motor_driver_1_ena, speed)
-    motor_driver_1_ena_pwm.start(0)
+    motor_driver_1_ena_pwm.start(speed)
     motor_driver_1_enb_pwm = GPIO.PWM(motor_driver_1_enb, speed)
-    motor_driver_1_enb_pwm.start(0)
+    motor_driver_1_enb_pwm.start(speed)
 
     GPIO.output(motor_driver_1_int_1, GPIO.HIGH)
     GPIO.output(motor_driver_1_int_3, GPIO.HIGH)
