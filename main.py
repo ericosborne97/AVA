@@ -147,16 +147,13 @@ print("tire_1_rotation_enable", tire_1_rotation_enable)
 print("tire_2_steering_enable", tire_2_steering_enable)
 print("tire_2_rotation_enable", tire_2_rotation_enable)
 
-tire_1_steering_enable_pwm = GPIO.PWM(tire_1_steering_enable, speed)
-tire_1_rotation_enable_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
 
 tire_2_steering_enable_pwm = GPIO.PWM(tire_2_steering_enable, speed)
 tire_2_rotation_enable_pwm = GPIO.PWM(tire_2_rotation_enable, speed)
 
 while True:
-    print("yes")
-    #tire_2_steering_enable_pwm.start(speed)
-    #GPIO.output(tire_2_steering_direction_1, GPIO.LOW)
-    #GPIO.output(tire_2_steering_direction_2, GPIO.HIGH)
+    tire_2_steering_enable_pwm.start(speed)
+    GPIO.output(tire_2_steering_direction_1, GPIO.LOW)
+    GPIO.output(tire_2_steering_direction_2, GPIO.HIGH)
 
 GPIO.cleanup()
