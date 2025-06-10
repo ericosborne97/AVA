@@ -2,8 +2,6 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 
-GPIO.cleanup()
-
 #define your specific motor pwm pins here
 motor_driver_1_ena = 3
 motor_driver_1_int_1 = 5
@@ -103,13 +101,13 @@ tire_1_rotation_enable = motor_driver_1_ena
 tire_1_rotation_direction_1 = motor_driver_1_int_1
 tire_1_rotation_direction_2 = motor_driver_1_int_2
 
-tire_2_steering_enable = motor_driver_1_enb
-tire_2_steering_direction_1 = motor_driver_1_int_3
-tire_2_steering_direction_2 = motor_driver_1_int_4
+tire_2_steering_enable = motor_driver_2_enb
+tire_2_steering_direction_1 = motor_driver_2_int_3
+tire_2_steering_direction_2 = motor_driver_2_int_4
 
 tire_2_rotation_enable = motor_driver_1_ena
-tire_2_rotation_direction_1 = motor_driver_1_int_1
-tire_2_rotation_direction_2 = motor_driver_1_int_2
+tire_2_rotation_direction_1 = motor_driver_2_int_1
+tire_2_rotation_direction_2 = motor_driver_2_int_2
 
 #Set mode and all pins to output
 GPIO.setmode(GPIO.BCM)
