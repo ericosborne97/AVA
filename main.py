@@ -103,6 +103,14 @@ tire_1_rotation_enable = motor_driver_1_ena
 tire_1_rotation_direction_1 = motor_driver_1_int_1
 tire_1_rotation_direction_2 = motor_driver_1_int_2
 
+tire_2_steering_enable = motor_driver_1_enb
+tire_2_steering_direction_1 = motor_driver_1_int_3
+tire_2_steering_direction_2 = motor_driver_1_int_4
+
+tire_2_rotation_enable = motor_driver_1_ena
+tire_2_rotation_direction_1 = motor_driver_1_int_1
+tire_2_rotation_direction_2 = motor_driver_1_int_2
+
 #Set mode and all pins to output
 GPIO.setmode(GPIO.BCM)
 
@@ -136,16 +144,17 @@ GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 
 #Configure all motors to run at 100 pwm
 
-speed = 0.01
+speed = 5
 
 tire_1_steering_enable_pwm = GPIO.PWM(tire_1_steering_enable, speed)
 tire_1_rotation_enable_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
 
-while True:
-    tire_1_steering_enable_pwm.start(speed)
-    tire_1_rotation_enable_pwm.start(speed)
+tire_2_steering_enable_pwm = GPIO.PWM(tire_2_steering_enable, speed)
+tire_2_rotation_enable_pwm = GPIO.PWM(tire_2_rotation_enable, speed)
 
-    GPIO.output(tire_1_rotation_direction_1, GPIO.LOW)
+while True:
+    tire_2_steering_enable_pwm.start(speed)
+    GPIO.output(tire_2_rotation_direction_1, GPIO.LOW)
     GPIO.output(tire_1_rotation_direction_2, GPIO.HIGH)
 
 GPIO.cleanup()
