@@ -135,7 +135,7 @@ while True:
     print(motor_driver_1_ena)
     print(motor_driver_1_enb)
     motor_driver_1_ena_pwm.start(speed)
-    motor_driver_1_enb_pwm.start(speed)
+    #motor_driver_1_enb_pwm.start(speed)
 
     GPIO.output(motor_driver_1_int_1, GPIO.HIGH)
     GPIO.output(motor_driver_1_int_3, GPIO.HIGH)
