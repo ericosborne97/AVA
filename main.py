@@ -109,6 +109,14 @@ tire_2_steering_enable = motor_driver_2_ena
 tire_2_steering_direction_1 = motor_driver_2_int_1
 tire_2_steering_direction_2 = motor_driver_2_int_2
 
+tire_3_rotation_enable = motor_driver_3_enb
+tire_3_rotation_direction_1 = motor_driver_3_int_3
+tire_3_rotation_direction_2 = motor_driver_3_int_4
+
+tire_3_steering_enable = motor_driver_3_ena
+tire_3_steering_direction_1 = motor_driver_3_int_1
+tire_3_steering_direction_2 = motor_driver_3_int_2
+
 
 #Set mode and all pins to output
 
@@ -161,10 +169,9 @@ tire_2_rotation_enable_pwm.stop()
 
 
 while True:
-    print('ehllo')
-    #tire_3_rotation_enable_pwm.start(speed)
-    #GPIO.output(tire_3_rotation_direction_1, GPIO.LOW)
-    #GPIO.output(tire_3_rotation_direction_2, GPIO.HIGH)
+    tire_3_rotation_enable_pwm.start(speed)
+    GPIO.output(tire_3_rotation_direction_1, GPIO.LOW)
+    GPIO.output(tire_3_rotation_direction_2, GPIO.HIGH)
 
 GPIO.cleanup()
 
