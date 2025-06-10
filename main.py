@@ -2,6 +2,7 @@ import RPi.GPIO as GPIO
 import time
 GPIO.setmode(GPIO.BCM)
 
+GPIO.cleanup()
 #define your specific motor pwm pins here
 motor_driver_1_ena = 3
 motor_driver_1_int_1 = 5
@@ -141,7 +142,6 @@ GPIO.setup(motor_driver_4_int_4, GPIO.OUT)
 GPIO.setup(motor_driver_4_enb, GPIO.OUT)
 
 #Configure all motors to run at 100 pwm
-
 speed = 10
 print("tire_1_steering_enable", tire_1_steering_enable)
 print("tire_1_rotation_enable", tire_1_rotation_enable)
