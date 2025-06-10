@@ -62,3 +62,94 @@ pin_to_gpio = {
 
 def board_pin_to_gpio(pin):
     return pin_to_gpio.get(pin, None)
+
+#Convert from pin number to GPIO number
+motor_driver_1_ena = board_pin_to_gpio(motor_driver_1_ena)
+motor_driver_1_int_1 = board_pin_to_gpio(motor_driver_1_int_1)
+motor_driver_1_int_2 = board_pin_to_gpio(motor_driver_1_int_2)
+motor_driver_1_int_3 = board_pin_to_gpio(motor_driver_1_int_3)
+motor_driver_1_int_4 = board_pin_to_gpio(motor_driver_1_int_4)
+motor_driver_1_enb = board_pin_to_gpio(motor_driver_1_enb)
+
+motor_driver_2_ena = board_pin_to_gpio(motor_driver_2_ena)
+motor_driver_2_int_1 = board_pin_to_gpio(motor_driver_2_int_1)
+motor_driver_2_int_2 = board_pin_to_gpio(motor_driver_2_int_2)
+motor_driver_2_int_3 = board_pin_to_gpio(motor_driver_2_int_3)
+motor_driver_2_int_4 = board_pin_to_gpio(motor_driver_2_int_4)
+motor_driver_2_enb = board_pin_to_gpio(motor_driver_2_enb)
+
+motor_driver_3_ena = board_pin_to_gpio(motor_driver_3_ena)
+motor_driver_3_int_1 = board_pin_to_gpio(motor_driver_3_int_1)
+motor_driver_3_int_2 = board_pin_to_gpio(motor_driver_3_int_2)
+motor_driver_3_int_3 = board_pin_to_gpio(motor_driver_3_int_3)
+motor_driver_3_int_4 = board_pin_to_gpio(motor_driver_3_int_4)
+motor_driver_3_enb = board_pin_to_gpio(motor_driver_3_enb)
+
+motor_driver_4_ena = board_pin_to_gpio(motor_driver_4_ena)
+motor_driver_4_int_1 = board_pin_to_gpio(motor_driver_4_int_1)
+motor_driver_4_int_2 = board_pin_to_gpio(motor_driver_4_int_2)
+motor_driver_4_int_3 = board_pin_to_gpio(motor_driver_4_int_3)
+motor_driver_4_int_4 = board_pin_to_gpio(motor_driver_4_int_4)
+motor_driver_4_enb = board_pin_to_gpio(motor_driver_4_enb)
+
+#define what motor driver links with hardware
+tire_1_steering_enable = motor_driver_1_enb
+tire_1_steering_direction_1 = motor_driver_1_int_3
+tire_1_steering_direction_2 = motor_driver_1_int_4
+
+tire_1_rotation_enable = motor_driver_1_ena
+tire_1_rotation_direction_1 = motor_driver_1_int_1
+tire_1_rotation_direction_2 = motor_driver_1_int_2
+
+tire_2_rotation_enable = motor_driver_2_enb
+tire_2_rotation_direction_1 = motor_driver_2_int_3
+tire_2_rotation_direction_2 = motor_driver_2_int_4
+
+tire_2_steering_enable = motor_driver_2_ena
+tire_2_steering_direction_1 = motor_driver_2_int_1
+tire_2_steering_direction_2 = motor_driver_2_int_2
+
+
+#Set mode and all pins to output
+
+GPIO.setup(motor_driver_1_ena, GPIO.OUT)
+GPIO.setup(motor_driver_1_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_1_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_1_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_1_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_1_enb, GPIO.OUT)
+
+GPIO.setup(motor_driver_2_ena, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_2_enb, GPIO.OUT)
+
+GPIO.setup(motor_driver_3_ena, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_3_enb, GPIO.OUT)
+
+GPIO.setup(motor_driver_4_ena, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_4_enb, GPIO.OUT)
+
+#Configure all motors to run at 100 pwm
+speed = 10
+print("tire_1_steering_enable", tire_1_steering_enable)
+print("tire_1_rotation_enable", tire_1_rotation_enable)
+print("tire_2_steering_enable", tire_2_steering_enable)
+print("tire_2_rotation_enable", tire_2_rotation_enable)
+
+tire_1_steering_enable_pwm = GPIO.PWM(tire_1_steering_enable, speed)
+tire_1_rotation_enable_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
+tire_2_steering_enable_pwm = GPIO.PWM(tire_2_steering_enable, speed)
+tire_2_rotation_enable_pwm = GPIO.PWM(tire_2_rotation_enable, speed)
+
+
