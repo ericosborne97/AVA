@@ -172,6 +172,7 @@ tire_3_steering_enable_pwm.stop()
 #tire_3_rotation_enable_pwm.stop()
 
 while True:
+    print('ehllo')
     #tire_3_rotation_enable_pwm.start(speed)
     #GPIO.output(tire_3_rotation_direction_1, GPIO.LOW)
     #GPIO.output(tire_3_rotation_direction_2, GPIO.HIGH)
