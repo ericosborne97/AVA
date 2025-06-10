@@ -118,3 +118,55 @@ GPIO.setup(motor_driver_1_int_2, GPIO.OUT)
 GPIO.setup(motor_driver_1_int_3, GPIO.OUT)
 GPIO.setup(motor_driver_1_int_4, GPIO.OUT)
 GPIO.setup(motor_driver_1_enb, GPIO.OUT)
+
+'''
+GPIO.setup(motor_driver_2_ena, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_2_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_2_enb, GPIO.OUT)
+
+GPIO.setup(motor_driver_3_ena, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_3_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_3_enb, GPIO.OUT)
+
+GPIO.setup(motor_driver_4_ena, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_1, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_2, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_3, GPIO.OUT)
+GPIO.setup(motor_driver_4_int_4, GPIO.OUT)
+GPIO.setup(motor_driver_4_enb, GPIO.OUT)
+
+#Configure all motors to run at 100 pwm
+speed = 10
+print("tire_1_steering_enable", tire_1_steering_enable)
+print("tire_1_rotation_enable", tire_1_rotation_enable)
+print("tire_2_steering_enable", tire_2_steering_enable)
+print("tire_2_rotation_enable", tire_2_rotation_enable)
+
+tire_1_steering_enable_pwm = GPIO.PWM(tire_1_steering_enable, speed)
+tire_1_rotation_enable_pwm = GPIO.PWM(tire_1_rotation_enable, speed)
+tire_2_steering_enable_pwm = GPIO.PWM(tire_2_steering_enable, speed)
+tire_2_rotation_enable_pwm = GPIO.PWM(tire_2_rotation_enable, speed)
+
+
+#Sanity check because sometimes pwm can remain on after program has ended
+tire_1_steering_enable_pwm.stop()
+tire_1_rotation_enable_pwm.stop()
+tire_2_steering_enable_pwm.stop()
+tire_2_rotation_enable_pwm.stop()
+
+
+while True:
+    print('ehllo')
+    #tire_3_rotation_enable_pwm.start(speed)
+    #GPIO.output(tire_3_rotation_direction_1, GPIO.LOW)
+    #GPIO.output(tire_3_rotation_direction_2, GPIO.HIGH)
+
+GPIO.cleanup()
+
+'''
