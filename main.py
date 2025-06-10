@@ -111,8 +111,9 @@ tire_2_steering_direction_2 = motor_driver_2_int_2
 
 
 #Set mode and all pins to output
-'''
+
 GPIO.setup(motor_driver_1_ena, GPIO.OUT)
+'''
 GPIO.setup(motor_driver_1_int_1, GPIO.OUT)
 GPIO.setup(motor_driver_1_int_2, GPIO.OUT)
 GPIO.setup(motor_driver_1_int_3, GPIO.OUT)
