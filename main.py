@@ -132,3 +132,5 @@ motor_driver_1_ena_pwm = GPIO.PWM(motor_driver_1_ena, speed)
 motor_driver_1_ena_pwm.start(0)
 GPIO.output(motor_driver_1_int_1, GPIO.HIGH)
 GPIO.output(motor_driver_1_int_3, GPIO.HIGH)
+while True:
+    print("01")
